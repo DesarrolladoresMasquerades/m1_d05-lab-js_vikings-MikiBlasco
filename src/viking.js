@@ -76,9 +76,20 @@ vikingAttack(){
 
 }
 saxonAttack(){
+  const indexSaxon = [Math.floor(Math.random()) * this.saxonArmy.length];
+  const indexViking = [Math.floor(Math.random()) * this.vikingArmy.length];
 
+  const randomSaxon = this.saxonArmy[indexSaxon];
+  const randomViking = this.vikingArmy[indexViking];
+
+  let VikingVictim = randomViking.receiveDamage(randomSaxon.strength)
+  if (randomViking.health <= 0) this.vikingArmy.splice(indexViking,1) 
+  
+  return VikingVictim
 }
-showStatus(){}
+showStatus(){
+  
+}
 
 }
 
